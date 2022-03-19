@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; background-color: #D4F1F4;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.text-center{
+    text-align: center;
+}
+
+
+.p20{
+    padding: 20px!important;
+}
+
+.pr20{
+    padding-right: 20px!important;
+}
+
+.pl20{
+    padding-left: 20px!important;
+}
+
+.pt20{
+    padding-top: 20px!important;
+}
+
+.pb20{
+    padding-bottom: 20px!important;
+}
+
+
+.ml20{
+    margin-left: 20px!important;
+}
+.mr20{
+    margin-right: 20px!important;
+}
+.mt20{
+    margin-top: 20px!important;
+}
+.mb20{
+    margin-bottom: 20px!important;
+}
+
+.ml10{
+    margin-left: 10px!important;
+}
+.mr10{
+    margin-right: 10px!important;
+}
+.mt10{
+    margin-top: 10px!important;
+}
+.mb10{
+    margin-bottom: 10px!important;
+}
+
+.form-background-color{
+    background-color: #fff!important;
+}

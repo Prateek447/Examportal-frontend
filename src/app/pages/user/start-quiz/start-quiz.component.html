@@ -1,0 +1,76 @@
+<div class="bootstrap-wrapper" *ngIf="!isSubmitted">
+
+    <div class="row">
+        <div class="col-md-10">
+            <div class="container"  *ngIf="questions">
+                <mat-card *ngFor="let q of questions; let i = index" class="mt20"> 
+                    <mat-card-content>
+                        <p> <b> Q:({{i+1}}) <span [innerHtml]="q.content"></span></b></p>
+                        <mat-divider></mat-divider>
+                        <div class="row mt20">
+                            <div class="col-md-6">
+                                <input type="radio" [value]="q.option1" [name]="i+''" [(ngModel)]="q.givenAnswer"><b>{{q.option1}}</b>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="radio" [value]="q.option2" [name]="i+''" [(ngModel)]="q.givenAnswer"><b>{{q.option2}}</b>
+                            </div>
+                        </div>
+                        <div class="row mt10">
+                            <div class="col-md-6">
+                                <input type="radio" [value]="q.option3" [name]="i+''" [(ngModel)]="q.givenAnswer"><b>{{q.option3}}</b>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="radio" [value]="q.option4" [name]="i+''" [(ngModel)]="q.givenAnswer"><b>{{q.option4}}</b>
+                            </div>
+            
+                        </div>
+        
+                    </mat-card-content>
+                </mat-card>
+        
+                <div class="container text-center mt20 mb20">
+                    <button (click)="submitQuiz()" mat-raised-button color="accent">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+           <b> <p class="mt20">Time Left {{getFormatedTime()}}</p></b>
+            <div class="container text-center mt20">
+            <mat-spinner 
+            mode ="determinate"
+            color ="accent"
+            [value]="(timer / (this.questions.length * 2 * 60)) * 100"
+            ></mat-spinner>
+        </div>
+        </div>
+    </div>
+
+
+  
+</div>
+
+<div class="bootstrap-wrapper" *ngIf="isSubmitted">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title class="text-center">
+                         Result :-
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content class="text-center">
+                       <b><h3>Total Questions Attempt :{{attempted}}</h3></b> 
+                       <b><h3>Total Marks Got :{{marksGot}}</h3></b> 
+                       <b><h3>Correct Answers :{{correctAnswer}}</h3></b> 
+                    </mat-card-content>
+
+                    <mat-card-actions class="text-center">
+                        <button routerLink="/user-dashboard/quizes/0" mat-raised-button  color="primary">Exit</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

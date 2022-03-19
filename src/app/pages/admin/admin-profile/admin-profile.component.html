@@ -1,0 +1,71 @@
+<mat-card *ngIf="user">
+    <h1 class="text-center">Your Profile details</h1>
+   
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                 <img src="https://retailx.com/wp-content/uploads/2019/12/iStock-476085198.jpg" alt="profile-image" class="profile-image"/>
+                  <h1>{{user.firstname}} {{user.lastname}}</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <table class="table text-center">
+
+                        <tr>
+                            <td>
+                                Username
+                            </td>
+                            <td>
+                                {{ user.username }}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Userid
+                            </td>
+                            <td>
+                                TEMIOS{{user.id}}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Phone
+                            </td>
+                            <td>
+                                {{user.phone}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Role
+                            </td>
+                            <td>
+                                 {{user.authorities[0].authority}}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Status
+                            </td>
+                            <td>
+                                 {{ user.enabled ? "ACTIVE" : "NOT_ACTIVE"}}
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary">UPDATE</button>
+        <button mat-raised-button color="accent">DELETE</button>
+      </mat-card-actions>
+</mat-card>

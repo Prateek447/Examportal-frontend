@@ -1,0 +1,58 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row" *ngIf="quiz">
+            <div class="col-md-12">
+                <mat-card class="mt20 mb20">
+                    <mat-card-header>
+                        <div class="container text-center">
+                            <mat-card-title>
+                                Read the instructions carefully !
+                              </mat-card-title>
+                        </div>
+                    </mat-card-header>
+
+                    <h1>Quiz: {{quiz.title}}</h1>
+                    <p>{{quiz.description}}</p>
+
+                    <mat-divider></mat-divider>
+                    <mat-card-content>
+
+                        <h2 class="mt20">Important instructions :-</h2>
+                         <ul>
+                             <li>Make sure that you write your name and student ID correctly.
+                                  Otherwise, the system can't record your grades.</li>
+                              <li>The given time for this quiz is {{quiz.numberOfQuestions * 2}} minutes. After that, 
+                                  the form will be closed for you.</li> 
+                               <li>There are {{quiz.numberOfQuestions}} in this Quiz.</li> 
+                               <li>Each Question carries {{quiz.maxMarks / quiz.numberOfQuestions}}</li>     
+                               <li>Students who will not submit their answers in time will receive 0</li>
+                               <li>You can only submit your answers once. If you wish to pause the the quiz, 
+                                   please use the Save and Continue Later button.</li>
+                                <li>Each question has its own grading points. After you submit your answers,
+                                     we will evaluate your answers and let you know your grades later.</li> 
+                                 <li>If you have any technical problem during the quiz,
+                                      please take a screenshot or screen recording and send us.</li>         
+                         </ul>
+                          
+                         <mat-divider></mat-divider>
+                         <h2>What to do if your online exam is interrupted</h2>
+                         <ul>
+                             <li>If your online exam is interrupted, click the “Back” button on your web browser to see if you can return to the exam. If not, follow the instructions below to resume taking the exam. Note: Answers are saved by the system in 10-minute intervals. If you have to log back in to complete your exam, 
+                                 your prior answers will be remain from the last system-save</li>
+                              <li>Reconnect to the Internet and log back into Brightspace</li>   
+                              <li>Follow your original instructions to access the exam login page</li>
+                              <li>Ask your proctor to re-enter the Username and Password, then select the checkbox "Show list of unfinished exams, only select to re-enter an exam already in progress." This will enable you to resume taking the exam, 
+                                  close to the point before the interruption occurred</li>
+                               <li>Have your Proctor enter the Username and Password provided in the email from The College and click enter.</li>   
+                         </ul>
+                    </mat-card-content>
+                    <mat-card-actions class="text-center">
+                       <button mat-raised-button  (click)="startQuiz()" style="background-color: green; color: white;">
+                        START</button>
+                    </mat-card-actions>
+
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
